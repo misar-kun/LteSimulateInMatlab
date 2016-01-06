@@ -4,6 +4,8 @@ function PDSCH_ReTypeProc(eNodeParaDl)
 
     PortNum = eNodeParaDl.CellPara.PortNum;
     SubFrameFreqDataInit(PortNum);
+    ReTypeFillUeInfo();
+    ReTypeFillCellInfo();
 end
 
 function SubFrameFreqDataInit(PortNum)
