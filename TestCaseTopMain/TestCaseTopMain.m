@@ -8,6 +8,7 @@ function TestCaseTopMain()
     TestCaseCfg.TestCaseFail = 0;
 
     TestBasicFunction();
+    TestDspSupportFunction();
 
 
     PrintStr = sprintf('%7d    %8d    %8d\n', TestCaseCfg.TestCaseRun, ...
