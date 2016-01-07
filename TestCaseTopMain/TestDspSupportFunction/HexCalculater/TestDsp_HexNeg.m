@@ -7,24 +7,24 @@ function TestDsp_HexNeg()
     % Test Basic Convert
     TestCaseCfg.TestCaseIdx = TestCaseCfg.TestCaseIdx + 1;
     HexData = '0x0001';
-    HexRetRef = '0xFFFF';
-    [HexRet] = HexNeg(HexData);
-    EXPECT_EQ(HexRetRef, HexRet);
+    HexNegRef = '0xFFFF';
+    [HexNegRet] = HexNeg(HexData);
+    EXPECT_EQ(HexNegRef, HexNegRet);
     
     %% TestCase2
     % Test Vector Proc
     TestCaseCfg.TestCaseIdx = TestCaseCfg.TestCaseIdx + 1;
     HexData = ['0x0001'; '0x0000'; '0xFFFF'];
-    HexRetRef = ['0xFFFF'; '0x0000'; '0x0001'];
-    [HexRet] = HexNeg(HexData);
-    EXPECT_EQ(HexRetRef, HexRet);
+    HexNegRef = ['0xFFFF'; '0x0000'; '0x0001'];
+    [HexNegRet] = HexNeg(HexData);
+    EXPECT_EQ(HexNegRef, HexNegRet);
     
     %% TestCase3
     % Test long convert
     TestCaseCfg.TestCaseIdx = TestCaseCfg.TestCaseIdx + 1;
-    HexData = '0x00001';
-    HexRetRef = '0xFFFFF';
-    [HexRet] = HexNeg(HexData);
-    EXPECT_EQ(HexRetRef, HexRet);
+    HexData = '0x0000001';
+    HexNegRef = '0xFFFFFFF';
+    [HexNegRet] = HexNeg(HexData);
+    EXPECT_EQ(HexNegRef, HexNegRet);
     
 end

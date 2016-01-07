@@ -1,12 +1,6 @@
-function [HexRet] = HexNeg(HexData)
-    PreStr = lower(HexData(:, 1:2));
-    Data = HexData(:, 3:end);
+function [HexNeg] = HexNeg(HexData)
+    [Data] = BasicHexStrChk(HexData);        
     [m, n] = size(Data);
-    formatStr = repmat(['0x'], m, 1);
-    if sum(sum(formatStr - PreStr))
-        error('[HexNeg] Hex Data Err! Use "0x/" as PreStr');
-    end
-        
     ConvConst = 2 ^ (4 * n);
     ConvConstHalf = ConvConst / 2;
 
@@ -20,5 +14,5 @@ function [HexRet] = HexNeg(HexData)
         warning('[HexNeg] Convert Data overflow');
     end
 
-    HexRet = [PreStr, dec2hex(DecData, n)];
+    HexNeg = [repmat(['0x'], m, 1), dec2hex(DecData, n)];
 end
