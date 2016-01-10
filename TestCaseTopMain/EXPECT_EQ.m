@@ -2,7 +2,7 @@ function ErrCnt = EXPECT_EQ(a, b)
     global TestCaseCfg;
     TestCaseCfg.TestCaseRun = TestCaseCfg.TestCaseRun + 1;
 
-    ErrCnt = sum(abs(size(a) - size(b))) + sum(abs(a - b));
+    ErrCnt = sum(abs(size(a) - size(b))) + sum(sum(abs(a - b)));
     if 0 == ErrCnt 
         TestCaseCfg.TestCasePass = TestCaseCfg.TestCasePass + 1;
     else
