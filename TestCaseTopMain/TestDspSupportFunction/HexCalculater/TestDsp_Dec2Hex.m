@@ -28,5 +28,13 @@ function TestDsp_Dec2Hex()
     HexDataRef = '0x19ABCDEF';
     [HexData] = Dec2Hex(DecData, 8, 4);
     EXPECT_EQ(HexDataRef, HexData);
+
+    %% TestCase4
+    % Test Dec2Hex wide great than parameter
+    TestCaseCfg.TestCaseIdx = TestCaseCfg.TestCaseIdx + 1;
+    DecData = -12345;
+    HexDataRef = '0xCFC7';
+    [HexData] = Dec2Hex(DecData, 4, 0);
+    EXPECT_EQ(HexDataRef, HexData);
 end
     

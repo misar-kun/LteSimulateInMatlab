@@ -16,5 +16,8 @@ function [HexData] = Dec2Hex(DecData, HexNumLen, FractionLen)
     DecData = DecDataTmp;
     NegIdx = find(DecData < 0);
     DecData(NegIdx) = DecData(NegIdx) + ConvConst;
+    if find(DecData < 0)
+        error('[Dec2Hex] Err HexNumLen is too small to show DecData');
+    end
     HexData = [repmat(['0x'], length(DecData), 1), dec2hex(DecData, HexNumLen)];
 end

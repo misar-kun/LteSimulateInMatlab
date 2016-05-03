@@ -9,6 +9,7 @@ function TestCaseTopMain()
 
     TestBasicFunction();
     TestDspSupportFunction();
+%    TestLteModule();
 
 
     PrintStr = sprintf('%7d    %8d    %8d\n', TestCaseCfg.TestCaseRun, ...
