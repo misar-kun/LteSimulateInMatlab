@@ -7,5 +7,6 @@ function TestDspSupportFunction()
     TestDsp_Dec2Hex();
     TestDsp_HexAddSub();
     TestDsp_HexMult();
+    TestDsp_ComplexDec2Hex();
 
 end
